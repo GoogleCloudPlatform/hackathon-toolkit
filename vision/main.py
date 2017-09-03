@@ -38,8 +38,6 @@ def upload_photo():
 
     # Retrieve a Vision API response for the photo stored in Cloud Storage
     source_uri = 'gs://{}/{}'.format(os.environ.get('CLOUD_STORAGE_BUCKET'), blob.name)
-    image = types.Image()
-    image.source.image_uri = source_uri
     response = client.annotate_image({
         'image': {'source': {'image_uri': source_uri}},
     })
@@ -48,7 +46,7 @@ def upload_photo():
     web_entities = response.web_detection.web_entities
 
     # Redirect to the home page.
-    return render_template('homepage.html', labels=labels, faces=faces, web_entities=web_entities, response=response, public_url=image_public_url)
+    return render_template('homepage.html', labels=labels, faces=faces, web_entities=web_entities, public_url=image_public_url)
 
 
 @app.errorhandler(500)
