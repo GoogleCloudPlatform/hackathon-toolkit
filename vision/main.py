@@ -4,7 +4,6 @@ import os
 from flask import Flask, redirect, render_template, request
 from google.cloud import storage
 from google.cloud import vision
-from google.cloud.vision import types
 
 
 app = Flask(__name__)
