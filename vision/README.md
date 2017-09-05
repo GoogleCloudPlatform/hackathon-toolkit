@@ -6,7 +6,7 @@ Instructions
 1. Create a project at console.cloud.google.com.
 1. Enable the Vision API. Go to console.cloud.google.com, click the button in the top left, select 'APIs & services', click 'Enable APIs and Services' at the top, search for 'Vision', click the first result, then click the 'Enable' button.
 1. Create a Cloud Storage bucket. Go to console.cloud.google.com, click the button in the top left, scroll down and select 'Storage', click 'Create Bucket' at the top, and name your bucket the same as your project ID.
-1. Set the `CLOUD_STORAGE_BUCKET` environment variable to your Cloud Storage bucket using command line. Run `export GOOGLE_STORAGE_BUCKET=INSERT_NAME_OF_YOUR_BUCKET`.
+1. Set the `CLOUD_STORAGE_BUCKET` environment variable to your Cloud Storage bucket using command line. Run `export CLOUD_STORAGE_BUCKET=INSERT_NAME_OF_YOUR_BUCKET`.
 1. Download the Google Cloud SDK command line tool, also known as `gcloud`. See https://cloud.google.com/sdk/downloads#interactive.
 1. Initialize gcloud by running `gcloud init`.
 1. Run `gcloud auth application-default login` to set up application default credentials.
