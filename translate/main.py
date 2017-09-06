@@ -23,7 +23,6 @@ def run_translate():
     lang_response = client.detect_language(input_text)
     translate_response = client.translate(input_text)
 
-    print(lang_response)
     confidence = lang_response.get('confidence')
     inputt = lang_response.get('input')
     language = lang_response.get('language')
