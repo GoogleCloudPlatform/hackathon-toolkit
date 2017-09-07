@@ -1,0 +1,43 @@
+<h1>Google Cloud Platform - Vision Sample</h1>
+
+<p>This Python Flask application demonstrates App Engine Flexible and the Cloud Vision API</p>
+
+<br>
+
+<html>
+  <body>
+    <form action="upload_photo" method="POST" enctype="multipart/form-data">
+      Upload File: <input type="file" name="file"><br>
+      <input type="submit" name="submit" value="Submit">
+    </form>
+    {% if public_url %}
+      <img src="{{public_url}}" width=200 height=200>
+      <h2>Label Detection:</h2>
+      {% for label in labels %}
+        <p><b>Label:</b> {{label.description}} <b>Score:</b> {{label.score}}</p>
+      {% endfor %}
+      <br>
+
+      <h2>Face Detection:</h2>
+      {% for face in faces %}
+        <p>Bounding Vertices:</p>
+        {% for vertice in face.bounding_poly.vertices %}
+          <p>({{vertice.x}},{{vertice.y}})</p>
+        {% endfor %}
+        <p>Joy Likelihood: {{face.joy_likelihood}}</p>
+        <p>Sorrow Likelihood: {{face.sorrow_likelihood}}</p>
+        <p>Anger Likelihood: {{face.anger_likelihood}}</p>
+        <p>Surprise Likelihood: {{face.surprise_likelihood}}</p>
+        <p>Underexposed Likelihood: {{face.under_exposed_likelihood}}</p>
+        <p>Blurred Likelihood: {{face.blurred_likelihood}}</p>
+        <p>Headwear Likelihood: {{face.headwear_likelihood}}</p>
+      {% endfor %}
+      <br>
+
+      <h2>Web Detection:</h2>
+      {% for web_entity in web_entities %}
+        <p><b>Web Entity:</b> {{web_entity.description}} <b>Score:</b> {{web_entity.score}}</p>
+      {% endfor %}
+    {% endif %}
+  </body>
+</html> 

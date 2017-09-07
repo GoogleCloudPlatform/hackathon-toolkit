@@ -1,0 +1,35 @@
+<h1>Google Cloud Platform - Natural Language Sample</h1>
+
+<p>This Python Flask application demonstrates App Engine Flexible and the Natural Language API</p>
+
+<br>
+
+<html>
+  <body>
+    <form action="run_language" method="POST" enctype="multipart/form-data">
+      Document: <input type="text" name="doc"><br>
+      Document Type:
+      <div>
+        <input type="radio" name="doc-type" value="PLAIN_TEXT" checked>PLAIN_TEXT<br>
+        <input type="radio" name="doc-type" value="HTML">HTML<br>
+      </div>
+      <input type="submit" name="submit" value="Submit">
+    </form>
+
+
+    {% if sentiment %}
+      <h2>Entity Detection:</h2>
+      {% for entity in entities %}
+        <p><b>Name:</b> {{ entity.name }}</p>
+        <p><b>Type:</b> {{ entity.type }}</p>
+        <p><b>Salience:</b> {{ entity.salience }}</p>
+        <br>
+      {% endfor %}
+      <br>
+      <h2>Sentiment Analysis:</h2>
+        <p><b>Magnitude:</b> {{ sentiment.magnitude }}</p>
+        <p><b>Score:</b> {{ sentiment.score }}</p>
+      <br>
+    {% endif %}
+  </body>
+</html> 
