@@ -1,6 +1,6 @@
 <h1>Google Cloud Platform - Vision Sample</h1>
 
-<p>This Python Flask application demonstrates App Engine Flexible and the Cloud Vision API</p>
+<p>This Python Flask application demonstrates App Engine Flexible, Cloud Storage, Vision API, and Datastore.</p>
 
 <br>
 
@@ -10,6 +10,11 @@
       Upload File: <input type="file" name="file"><br>
       <input type="submit" name="submit" value="Submit">
     </form>
+    {% for image_entity in image_entities %}
+      <img src="{{image_entity['image_public_url']}}" width=200 height=200>
+      <p>Top Label Detected using Vision API: {{image_entity['label']}}</p>
+    {% endfor %}
+
     {% if public_url %}
       <img src="{{public_url}}" width=200 height=200>
       <h2>Label Detection:</h2>
