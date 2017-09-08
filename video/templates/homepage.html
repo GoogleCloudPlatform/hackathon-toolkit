@@ -1,0 +1,22 @@
+<h1>Google Cloud Platform - Video Sample</h1>
+
+<p>This Python Flask application demonstrates App Engine Flexible and the Cloud Video API</p>
+
+<br>
+
+<html>
+  <body>
+    <form action="upload_video" method="POST" enctype="multipart/form-data">
+      Upload Video File: <input type="file" name="file"><br>
+      <input type="submit" name="submit" value="Submit">
+    </form>
+
+    {% for label in label_annotations %}
+      <p><b>Label Description:</b> {{label.description}}</p>
+      <p><b>Label Confidence:</b> {{label.locations[1].confidence}}</p>
+      <p><b>Label Start Time:</b> {{label.locations[1].segment.start_time_offset / 1000000.0}}</p>
+      <p><b>Label End Time:</b> {{label.locations[1].segment.end_time_offset / 1000000.0}}</p>
+      <br>
+    {% endfor %}
+  </body>
+</html> 
