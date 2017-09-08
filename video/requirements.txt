@@ -1,0 +1,4 @@
+Flask==0.12.2
+google-cloud-videointelligence==0.26.0
+google-cloud-storage==1.4.0
+gunicorn==19.7.1
