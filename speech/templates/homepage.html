@@ -1,0 +1,23 @@
+<h1>Google Cloud Platform - Speech Sample</h1>
+
+<p>This Python Flask application demonstrates App Engine Flexible and the Cloud Speech API</p>
+
+<br>
+
+<html>
+  <body>
+    <form action="upload_audio" method="POST" enctype="multipart/form-data">
+      Upload Audio File: <input type="file" name="file"><br>
+      <input type="submit" name="submit" value="Submit">
+    </form>
+
+    {% if results %}
+      <h2>Results:</h2>
+      {% for result in results %}
+        <p><b>Transcript:</b> {{result.alternatives[0].transcript}}</p>
+        <p><b>Confidence:</b> {{result.alternatives[0].confidence}}</p>
+      {% endfor %}
+      <br>
+    {% endif %}
+  </body>
+</html> 
