@@ -8,9 +8,9 @@ Create a project with the [Google Cloud Platform console](https://console.cloud.
 
 Enable the Vision API. Go to the [Google Cloud Platform console](https://console.cloud.google.com), click the button in the top left, select 'APIs & services', click 'Enable APIs and Services' at the top, search for 'Vision', click the first result, then click the 'Enable' button.
 
-Enable the Datastore API the same way.
+Enable the Datastore API the same way. (If it says 'Disable' when you visit its page, it's already enabled)
 
-Enable the Google Cloud Storage JSON API as well.
+Enable the Google Cloud Storage JSON API as well. (If it says 'Disable' when you visit its page, it's already enabled)
 
 Create a Cloud Storage bucket. Go to the [Google Cloud Platform console](https://console.cloud.google.com), click the button in the top left, scroll down and select 'Storage', click 'Create Bucket' at the top, and name your bucket the same as your project ID.
 
@@ -23,6 +23,10 @@ Download the [Google Cloud SDK command line tool](https://cloud.google.com/sdk/d
 Initialize gcloud:
 
     gcloud init
+
+Create an App Engine project:
+
+    gcloud app create
 
 ## Getting the sample code
 
