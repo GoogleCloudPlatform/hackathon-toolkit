@@ -4,11 +4,11 @@ This sample demonstrates how to use the [Google Cloud Natural Language API](http
 
 ## Setup
 
-Create a project with the [Google Cloud Platform console](https://console.cloud.google.com). Make note of your project ID, which may be different than your project name. Make sure to [Enable Billing](https://console.cloud.google.com/billing?debugUI=DEVELOPERS) for your project.
+Create a project with the [Google Cloud Platform Console Cloud Resource Manager](https://console.cloud.google.com/cloud-resource-manager). Make note of your project ID, which may be different than your project name. Make sure to [Enable Billing](https://console.cloud.google.com/billing?debugUI=DEVELOPERS) for your project.
 
 Enable the Natural Language API. Go to the [Google Cloud Platform console](https://console.cloud.google.com), click the button in the top left, select 'APIs & services', click 'Enable APIs and Services' at the top, search for 'Natural Language', click the first result, then click the 'Enable' button.
 
-Enable the Google Cloud Storage JSON API as well. (If it says 'Disable' when you visit its page, it's already enabled)
+Enable the Google Cloud Storage JSON API as well. (If it says 'Manage' when you visit its page, it's already enabled)
 
 Create a Cloud Storage bucket. Go to the [Google Cloud Platform console](https://console.cloud.google.com), click the button in the top left, scroll down and select 'Storage', click 'Create Bucket' at the top, and name your bucket the same as your project ID.
 
@@ -34,7 +34,7 @@ Run the following command to clone the Github repository:
 
 Change directory to the sample code location:
 
-    cd gcp-hackathon-demos/video
+    cd gcp-hackathon-demos/language
 
 ## Authentication
 
@@ -42,7 +42,7 @@ Set up application default credentials:
 
     gcloud auth application-default login
 
-Set up a service account. Visit the [Google Cloud Platform console](https://console.cloud.google.com), search 'Service Accounts' on the top search bar, click on the first result, and click the 'Create a Service Account button' towards the top. Give your service account a name and set the 'Role' to Project > Owner. Check the 'Furnish a new private key' box and click 'Create'. Save the generated service account key json file to somewhere on your computer.
+Set up a service account. Visit the [Google Cloud Platform console](https://console.cloud.google.com), search 'Service Accounts' on the top search bar, click on 'Service accounts', and click the 'Create a Service Account button' towards the top. Give your service account a name and set the 'Role' to Project > Owner. Check the 'Furnish a new private key' box and click 'Create'. Save the generated service account key json file to somewhere on your computer.
 
 Set the `GOOGLE_APPLICATION_CREDENTIALS` variable to point to the service account key location:
 

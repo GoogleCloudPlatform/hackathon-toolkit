@@ -4,11 +4,11 @@ This sample demonstrates how to use the [Google Cloud Translate API](https://clo
 
 ## Setup
 
-Create a project with the [Google Cloud Platform console](https://console.cloud.google.com). Make note of your project ID, which may be different than your project name. Make sure to [Enable Billing](https://console.cloud.google.com/billing?debugUI=DEVELOPERS) for your project.
+Create a project with the [Google Cloud Platform Console Cloud Resource Manager](https://console.cloud.google.com/cloud-resource-manager). Make note of your project ID, which may be different than your project name. Make sure to [Enable Billing](https://console.cloud.google.com/billing?debugUI=DEVELOPERS) for your project.
 
 Enable the Translate API. Go to the [Google Cloud Platform console](https://console.cloud.google.com), click the button in the top left, select 'APIs & services', click 'Enable APIs and Services' at the top, search for 'Translate', click the first result, then click the 'Enable' button.
 
-Enable the Google Cloud Storage JSON API as well. (If it says 'Disable' when you visit its page, it's already enabled)
+Enable the Google Cloud Storage JSON API as well. (If it says 'Manage' when you visit its page, it's already enabled)
 
 Create a Cloud Storage bucket. Go to the [Google Cloud Platform console](https://console.cloud.google.com), click the button in the top left, scroll down and select 'Storage', click 'Create Bucket' at the top, and name your bucket the same as your project ID.
 
