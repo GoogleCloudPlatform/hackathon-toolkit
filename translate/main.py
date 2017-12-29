@@ -19,16 +19,16 @@ def run_translate():
     client = translate.Client()
 
     # Retrieve Translate API's responses for the input text
-    input_text = request.form['text']
-    lang_response = client.detect_language(input_text)
-    translate_response = client.translate(input_text)
+    form_text = request.form['text']
+    lang_response = client.detect_language(form_text)
+    translate_response = client.translate(form_text)
 
     confidence = lang_response.get('confidence')
-    inputt = lang_response.get('input')
+    input_text = lang_response.get('input')
     language = lang_response.get('language')
     translated_text = translate_response.get('translatedText')
 
-    return render_template('homepage.html', confidence=confidence, inputt=inputt, language=language, 
+    return render_template('homepage.html', confidence=confidence, input_text=input_text, language=language, 
                                             translated_text=translated_text)
 
 @app.errorhandler(500)
