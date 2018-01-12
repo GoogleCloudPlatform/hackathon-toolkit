@@ -1,5 +1,6 @@
 import base64
 import os
+import sys
 
 from flask import Flask, redirect, render_template, request
 from google.cloud import datastore
@@ -66,9 +67,13 @@ def upload_photo():
     key = datastore_client.key(kind, name)
 
     # Construct the new entity using the key. Set dictionary values for entity
-    # keys image_public_url and label.
+    # keys image_public_url and label. If we are using python version 2, we need to convert
+    # our image URL to unicode to save it to Datastore properly.
     entity = datastore.Entity(key)
-    entity['image_public_url'] = image_public_url
+    if sys.version_info >= (3, 0):
+        entity['image_public_url'] = image_public_url
+    else:
+        entity['image_public_url'] = unicode(image_public_url, "utf-8")
     entity['label'] = labels[0].description
 
     # Save the new entity to Datastore
