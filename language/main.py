@@ -1,8 +1,8 @@
-import base64
-import os
-
 from flask import Flask, redirect, render_template, request
 
+from google.cloud import language
+from google.cloud.language import enums
+from google.cloud.language import types
 
 app = Flask(__name__)
 
@@ -14,27 +14,19 @@ def homepage():
 
 @app.route('/run_language', methods=['GET', 'POST'])
 def run_language():
-    from google.cloud import language
-
-    # Create a Cloud Translate client.
+    # Create a Cloud Natural Language client.
     client = language.LanguageServiceClient()
 
     # Retrieve inputs and create document object
-    doc = request.form['doc']
-    docType = request.form['doc-type']
-    print(docType)
-    document = language.types.Document(content=doc, type=docType)
+    text = request.form['text']
+    document = language.types.Document(content=text, type=enums.Document.Type.PLAIN_TEXT)
 
     # Retrieve response from Natural Language's analyze_entities() method
-    response = client.analyze_entities(
-        document=document,
-        encoding_type='UTF32')
+    response = client.analyze_entities(document=document)
     entities = response.entities
 
     # Retrieve response from Natural Language's analyze_sentiment() method
-    response = client.analyze_sentiment(
-        document=document,
-        encoding_type='UTF32')
+    response = client.analyze_sentiment(document=document)
     sentiment = response.document_sentiment
 
     return render_template('homepage.html', entities=entities, sentiment=sentiment)

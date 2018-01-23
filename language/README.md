@@ -8,23 +8,11 @@ Create a project with the [Google Cloud Platform Console Cloud Resource Manager]
 
 Enable the Natural Language API. Go to the [Google Cloud Platform console](https://console.cloud.google.com), click the button in the top left, select 'APIs & services', click 'Enable APIs and Services' at the top, search for 'Natural Language', click the first result, then click the 'Enable' button.
 
-Enable the Google Cloud Storage JSON API as well. (If it says 'Manage' when you visit its page, it's already enabled)
-
-Create a Cloud Storage bucket. Go to the [Google Cloud Platform console](https://console.cloud.google.com), click the button in the top left, scroll down and select 'Storage', click 'Create Bucket' at the top, and name your bucket the same as your project ID.
-
-Set the `CLOUD_STORAGE_BUCKET` environment variable to your Cloud Storage bucket using command line:
-
-    export CLOUD_STORAGE_BUCKET=INSERT_NAME_OF_YOUR_BUCKET
-
 Download the [Google Cloud SDK command line tool](https://cloud.google.com/sdk/downloads#interactive), also known as `gcloud`.
 
 Initialize gcloud:
 
     gcloud init
-
-Create an App Engine project:
-
-    gcloud app create
 
 ## Getting the sample code
 
