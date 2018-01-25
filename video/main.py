@@ -1,12 +1,9 @@
-import argparse
-import base64
 import os
-import time
 
 from flask import Flask, redirect, render_template, request
+
 from google.cloud import storage
-from google.cloud.gapic.videointelligence.v1beta1 import enums
-from google.cloud.gapic.videointelligence.v1beta1 import video_intelligence_service_client
+from google.cloud import videointelligence
 
 
 app = Flask(__name__)
@@ -17,25 +14,18 @@ def homepage():
     # Return a Jinja2 HTML template and pass in image_entities as a parameter.
     return render_template('homepage.html')
 
-# adapted from: 
-# https://github.com/GoogleCloudPlatform/python-docs-samples/blob/master/video/cloud-client/labels/labels.py
+
+# Detects labels given a Google Cloud Storage (GCS) URI.
+# Adapted from: https://github.com/GoogleCloudPlatform/python-docs-samples/blob/master/video/cloud-client/labels/labels.py
 def get_label_annotations(gcs_uri):
-    """ Detects labels given a Google Cloud Storage (GCS) URI. """
-    # [START construct_request]
-    video_client = video_intelligence_service_client.VideoIntelligenceServiceClient()
-    features = [enums.Feature.LABEL_DETECTION]
-    operation = video_client.annotate_video(gcs_uri, features)
-    # [END construct_request]
+    video_client = videointelligence.VideoIntelligenceServiceClient()
+    features = [videointelligence.enums.Feature.LABEL_DETECTION]
+    operation = video_client.annotate_video(gcs_uri, features=features)
 
-    # [START check_operation]
-    while not operation.done():
-        time.sleep(20)
-    # [END check_operation]
-
-    # [START get_response]
-    results = operation.result().annotation_results[0]
-    return results.label_annotations
-    # [END get_response]
+    # Wait until the  annotate_video function call has completed.
+    results = operation.result(timeout=90).annotation_results[0]
+    label_annotations = results.segment_label_annotations
+    return label_annotations
 
 
 @app.route('/upload_video', methods=['GET', 'POST'])
@@ -61,8 +51,7 @@ def upload_video():
     label_annotations = get_label_annotations(source_uri)
     
     # Redirect to the home page.
-    return render_template('homepage.html', label_annotations=label_annotations)
-
+    return render_template('homepage.html', video_public_url=video_public_url, video_content_type=video.content_type, label_annotations=label_annotations)
 
 @app.errorhandler(500)
 def server_error(e):

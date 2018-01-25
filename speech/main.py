@@ -16,8 +16,8 @@ def homepage():
     # Return a Jinja2 HTML template and pass in image_entities as a parameter.
     return render_template('homepage.html')
 
-# Adapted from: https://github.com/GoogleCloudPlatform/python-docs-samples/blob/master/speech/cloud-client/transcribe.py
 # Transcribes the audio file specified by the gcs_uri.
+# Adapted from: https://github.com/GoogleCloudPlatform/python-docs-samples/blob/master/speech/cloud-client/transcribe.py
 def transcribe_audio(gcs_uri):
 
     # Create a Speech Client object to interact with the Speech Client Library.
