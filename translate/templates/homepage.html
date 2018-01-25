@@ -11,16 +11,15 @@
       <input type="submit" name="submit" value="Submit">
     </form>
 
-
     {% if confidence %}
       <h2>Language Detection:</h2>
         <p><b>Confidence:</b> {{ confidence }}</p>
-        <p><b>Input:</b> {{ input_text }}</p>
+        <p><b>Input Text:</b> {{ input_text|safe }}</p>
         <p><b>Language:</b> {{ language }}</p>
       <br>
-      <h2>Translation:</h2>
-        <p>{{ translated_text }}</p>
-      <br>
+      <h2>Translated Text:</h2>
+        <p><b>French Translation:</b> {{ translated_text_french|safe }} </p>
+        <p><b>Chinese Translation:</b> {{ translated_text_chinese|safe }} </p>
     {% endif %}
   </body>
 </html> 

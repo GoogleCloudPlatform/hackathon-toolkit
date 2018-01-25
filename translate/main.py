@@ -1,6 +1,3 @@
-import base64
-import os
-
 from flask import Flask, redirect, render_template, request
 
 from google.cloud import translate
@@ -18,18 +15,24 @@ def run_translate():
     # Create a Cloud Translate client.
     client = translate.Client()
 
-    # Retrieve Translate API's responses for the input text
+    # Retrieve Translate API's detect_language response for the input text
     form_text = request.form['text']
-    lang_response = client.detect_language(form_text)
-    translate_response = client.translate(form_text)
+    detect_language_response = client.detect_language(form_text)
+    confidence = detect_language_response.get('confidence')
+    input_text = detect_language_response.get('input')
+    language = detect_language_response.get('language')
 
-    confidence = lang_response.get('confidence')
-    input_text = lang_response.get('input')
-    language = lang_response.get('language')
-    translated_text = translate_response.get('translatedText')
+    # Retrieve Translate API's translate to french response for the input text
+    # See https://cloud.google.com/translate/docs/languages for supported target_language values.
+    translate_response_french = client.translate(form_text, target_language='fr')
+    translated_text_french = translate_response_french.get('translatedText')
+
+    # Retrieve Translate API's translate to traditional Chinese response for the input text
+    translate_response_chinese = client.translate(form_text, target_language='zh-TW')
+    translated_text_chinese = translate_response_chinese.get('translatedText')
 
     return render_template('homepage.html', confidence=confidence, input_text=input_text, language=language, 
-                                            translated_text=translated_text)
+                                            translated_text_french=translated_text_french, translated_text_chinese=translated_text_chinese)
 
 @app.errorhandler(500)
 def server_error(e):
