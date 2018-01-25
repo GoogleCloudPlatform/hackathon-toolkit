@@ -10,7 +10,7 @@ Enable the Natural Language API. Go to the [Google Cloud Platform console](https
 
 Download the [Google Cloud SDK command line tool](https://cloud.google.com/sdk/downloads#interactive), also known as `gcloud`.
 
-Initialize gcloud:
+Initialize gcloud, selecting your Google account and project ID:
 
     gcloud init
 
@@ -64,9 +64,7 @@ When you are ready to leave your virtual environment:
 
 ## Deploying to App Engine
 
-Before deploying, open the `app.yaml` file and replace `YOUR_CLOUD_STORAGE_BUCKET` with the name of your cloud storage bucket. This allows your code to access the appropriate environment variable when it is deployed.
-
-Deploy your application to App Engine (takes several minutes):
+Deploy your application to App Engine (takes several minutes). When prompted to choose a region, choose the one that is closest to you geographically.
 
     gcloud app deploy
 

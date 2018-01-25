@@ -13,13 +13,18 @@
 
 
     {% if sentiment %}
+      <h2>Inputted Text:</h2>
+      <p>{{text}}</p>
+      <br>
       <h2>Entity Detection:</h2>
       {% for entity in entities %}
         <p><b>Name:</b> {{ entity.name }}</p>
         <p><b>Salience:</b> {{ entity.salience }}</p>
+        {% if entity.metadata['wikipedia_url'] %}
+          <p><a href="{{entity.metadata['wikipedia_url']}}">{{ entity.metadata['wikipedia_url'] }}</a></p>
+        {% endif %}
         <br>
       {% endfor %}
-      <br>
       <h2>Sentiment Analysis:</h2>
         <p><b>Magnitude:</b> {{ sentiment.magnitude }}</p>
         <p><b>Score:</b> {{ sentiment.score }}</p>

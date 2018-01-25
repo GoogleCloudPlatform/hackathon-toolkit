@@ -29,7 +29,7 @@ def run_language():
     response = client.analyze_sentiment(document=document)
     sentiment = response.document_sentiment
 
-    return render_template('homepage.html', entities=entities, sentiment=sentiment)
+    return render_template('homepage.html', text=text, entities=entities, sentiment=sentiment)
 
 @app.errorhandler(500)
 def server_error(e):
