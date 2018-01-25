@@ -1,6 +1,6 @@
 # Python Google Cloud Translate sample for Google App Engine Flexible Environment
 
-This sample demonstrates how to use the [Google Cloud Translate API](https://cloud.google.com/translate/) and [Google Cloud Storage](https://cloud.google.com/storage/) on [Google App Engine Flexible Environment](https://cloud.google.com/appengine).
+This sample demonstrates how to use the [Google Cloud Translate API](https://cloud.google.com/translate/) on [Google App Engine Flexible Environment](https://cloud.google.com/appengine).
 
 ## Setup
 

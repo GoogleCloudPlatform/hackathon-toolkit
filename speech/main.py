@@ -1,8 +1,11 @@
-import base64
 import os
 
 from flask import Flask, redirect, render_template, request
+
 from google.cloud import storage
+from google.cloud import speech
+from google.cloud.speech import enums
+from google.cloud.speech import types
 
 
 app = Flask(__name__)
@@ -13,32 +16,23 @@ def homepage():
     # Return a Jinja2 HTML template and pass in image_entities as a parameter.
     return render_template('homepage.html')
 
-# adapted from: 
-# https://github.com/GoogleCloudPlatform/python-docs-samples/blob/master/speech/cloud-client/transcribe.py
-#
-# [START def_transcribe_gcs]
-def transcribe_gcs(gcs_uri):
-    """Transcribes the audio file specified by the gcs_uri."""
-    from google.cloud import speech
-    from google.cloud.speech import enums
-    from google.cloud.speech import types
+# Adapted from: https://github.com/GoogleCloudPlatform/python-docs-samples/blob/master/speech/cloud-client/transcribe.py
+# Transcribes the audio file specified by the gcs_uri.
+def transcribe_audio(gcs_uri):
+
+    # Create a Speech Client object to interact with the Speech Client Library.
     client = speech.SpeechClient()
 
-    # [START migration_audio_config_gcs]
+    # Create audio and config objects that you'll need to call the API.
     audio = types.RecognitionAudio(uri=gcs_uri)
     config = types.RecognitionConfig(
         encoding=enums.RecognitionConfig.AudioEncoding.LINEAR16,
         sample_rate_hertz=16000,
         language_code='en-US')
-    # [END migration_audio_config_gcs]
 
+    # Call the Speech API using the Speech Client's recognize function.
     response = client.recognize(config, audio)
-
     return response
-# [END def_transcribe_gcs]
-
-
-
 
 @app.route('/upload_audio', methods=['GET', 'POST'])
 def upload_audio():
@@ -49,19 +43,14 @@ def upload_audio():
     bucket = storage_client.get_bucket(os.environ.get('CLOUD_STORAGE_BUCKET'))
 
     # Create a new blob and upload the file's content to Cloud Storage.
-    photo = request.files['file']
-    blob = bucket.blob(photo.filename)
+    audio = request.files['file']
+    blob = bucket.blob(audio.filename)
     blob.upload_from_string(
-            photo.read(), content_type=photo.content_type)
+            audio.read(), content_type=audio.content_type)
 
-    # Make the blob publicly viewable.
-    blob.make_public()
-    image_public_url = blob.public_url
-
-    # Retrieve a Vision API response for the photo stored in Cloud Storage
+    # Retrieve a Speech API response for the audio file stored in Cloud Storage
     source_uri = 'gs://{}/{}'.format(os.environ.get('CLOUD_STORAGE_BUCKET'), blob.name)
-    response = transcribe_gcs(source_uri)
-
+    response = transcribe_audio(source_uri)
     results = response.results
     
     # Redirect to the home page.

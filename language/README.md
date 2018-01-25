@@ -1,6 +1,6 @@
 # Python Google Cloud Natural Language sample for Google App Engine Flexible Environment
 
-This sample demonstrates how to use the [Google Cloud Natural Language API](https://cloud.google.com/natural-language/) and [Google Cloud Storage](https://cloud.google.com/storage/) on [Google App Engine Flexible Environment](https://cloud.google.com/appengine).
+This sample demonstrates how to use the [Google Cloud Natural Language API](https://cloud.google.com/natural-language/) on [Google App Engine Flexible Environment](https://cloud.google.com/appengine).
 
 ## Setup
 
