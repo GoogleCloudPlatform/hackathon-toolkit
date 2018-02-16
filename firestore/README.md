@@ -16,9 +16,9 @@ Change directory to the sample code location:
 
 Open the [Firebase Console](https://console.firebase.google.com/) and create a new project.
 
-In the 'Database' section, click 'Try Firestore Beta'.
+On the left navigation bar, click 'Develop', then click 'Database', then click 'Try Firestore Beta'.
 
-Click 'Enable'.
+Click the button for 'Start in test mode', then click 'Enable'.
 
 On the left navigation bar at the top, click 'Project Overview'.
 
@@ -26,9 +26,9 @@ Click the 'Add Firebase to your web app' button.
 
 Copy everything from the 'var config = {' line down to the '};' line.
 
-In the 'templates/homepage.html' code file, find the '// Firebase Configuration - REPLACE WITH YOUR OWN VALUES' comment and replace the existing config values with your own config values that you just copied from the Firebase console.
+In the 'templates/homepage.html' code file, find the '// Firebase Configuration - REPLACE WITH YOUR OWN VALUES' comment and replace the existing config values with your own config values that you just copied from the Firebase console. Make sure to fix the spacing.
 
-In the 'templates/dashboard.html' code file, find the '// Firebase Configuration - REPLACE WITH YOUR OWN VALUES' comment and replace the existing config values with your own config values that you just copied from the Firebase console.
+In the 'templates/dashboard.html' code file, find the '// Firebase Configuration - REPLACE WITH YOUR OWN VALUES' comment and replace the existing config values with your own config values that you just copied from the Firebase console. Make sure to fix the spacing.
 
 ## Cloud Firestore Database Preparation
 
