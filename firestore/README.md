@@ -1,6 +1,6 @@
 # Google Cloud Firestore Code Sample
 
-This sample demonstrates how to use [Google Cloud Firestore](https://cloud.google.com/firestore/docs/) on [Google App Engine Standard Environment](https://cloud.google.com/appengine).
+This sample demonstrates how to use [Google Cloud Firestore](https://firebase.google.com/docs/firestore/) on [Google App Engine Standard Environment](https://cloud.google.com/appengine).
 
 ## Getting the sample code
 
@@ -85,10 +85,17 @@ Once it finishes deploying, visit your app at YOUR_PROJECT_ID.appspot.com and YO
 ## Further Reference
 
 [Documentation and Tutorials for Google Cloud Firestore](https://firebase.google.com/docs/firestore/)
+
 [App Engine Standard for Python Flask Tutorial](https://cloud.google.com/appengine/docs/standard/python/getting-started/python-standard-env)
+
 [App Engine Flexible for Node.js Tutorial](https://cloud.google.com/nodejs/getting-started/hello-world)
+
 [Google Cloud Vision API](https://cloud.google.com/vision/)
+
 [Google Cloud Natural Language API](https://cloud.google.com/natural-language/)
+
 [Google Cloud Speech API](https://cloud.google.com/speech/)
+
 [Google Cloud Translation API](https://cloud.google.com/translate/)
+
 [Google Cloud Video Intelligence API](https://cloud.google.com/video-intelligence/)
