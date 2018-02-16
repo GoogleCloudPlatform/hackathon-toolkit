@@ -1,0 +1,100 @@
+<h1>Photo Guessing Game!</h1>
+<p>Guess which labels were detected for this photo by the Google Cloud Vision API.</p>
+
+<br>
+
+<html>
+  <body>
+    <img src="https://storage.googleapis.com/treehacks-demo/sunset.png" width=500 height=325>
+    <br><br>
+    Guess: <input type="text" name="guess" id="guess"><br><br>
+    <button onclick="submitGuess(document.getElementById('guess').value)">Submit</button>
+
+    <!-- Fetch the Firebase and Cloud Firestore Javascript libraries -->
+    <script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-firestore.js"></script>
+    <script>
+      // Firebase Configuration - REPLACE WITH YOUR OWN VALUES
+      var config = {
+        apiKey: REPLACE_WITH_YOUR_API_KEY,
+        authDomain: REPLACE_WITH_YOUR_AUTH_DOMAIN,
+        databaseURL: REPLACE_WITH_YOUR_DATABASE_URL,
+        projectId: REPLACE_WITH_YOUR_PROJECT_ID,
+        storageBucket: REPLACE_WITH_YOUR_STORAGE_BUCKET,
+        messagingSenderId: REPLACE_WITH_YOUR_MESSAGING_SENDER_ID,
+      };
+
+      // Initialize Firebase and Cloud Firestore
+      firebase.initializeApp(config);
+      var db = firebase.firestore();
+
+      // Retrieve correct answers from Cloud Firestore database's 'sunsetPhoto' document in the 'answers' collection. Store them in a variable called answersArray.
+      var answersArray = []
+      var answersRef = db.collection("answers").doc("sunsetPhoto");
+      answersRef.get().then(function(doc) {
+        databaseAnswers = doc.data().answers;
+        for (i = 0; i < databaseAnswers.length; i++) {
+          answersArray.push(databaseAnswers[i]);
+        }
+      }).catch(function(error) {
+        console.log("Error retrieving answers: ", error);
+      });
+
+      // Function for when user submits a new guess.
+      function submitGuess(guess) {
+        // convert to lowercase
+        guess = guess.toLowerCase();
+        // Check correctness
+        var indexOfGuess = answersArray.indexOf(guess);
+        var correct = true;
+        console.log(indexOfGuess);
+        if (indexOfGuess < 0) {
+          correct = false;
+        }
+
+        // Write guess as a new document to the 'guesses' collection in the Cloud Firestore database.
+        db.collection("guesses").add({
+          guess: guess,
+          correct: correct
+        }).then(function(docRef) {
+          console.log("Document written with ID: ", docRef.id);
+        }).catch(function(error) {
+          console.log("Error adding document: ", error);
+        });
+
+        // Update 'groupScore' document in the 'scores' collection in the Cloud Firestore database. Here we use a database transaction to make sure we increment the scores properly. (See https://firebase.google.com/docs/firestore/manage-data/transactions)
+        var scoresRef = db.collection("scores").doc("groupScore");
+        if (indexOfGuess >= 0) {
+          db.runTransaction(function(transaction) {
+            // This code may get re-run multiple times if there are conflicts.
+            return transaction.get(scoresRef).then(function(scoresRef) {
+              var newCorrectScore = scoresRef.data().correct + 1;
+              console.log(typeof scoresRef);
+              transaction.update(db.collection("scores").doc("groupScore"), { correct: newCorrectScore });
+            });
+          }).then(function() {
+            console.log("Transaction successfully committed!");
+          }).catch(function(error) {
+            console.log("Transaction failed: ", error);
+          });
+        } else {
+          db.runTransaction(function(transaction) {
+            // This code may get re-run multiple times if there are conflicts.
+            return transaction.get(scoresRef).then(function(scoresRef) {
+              var newIncorrectScore = scoresRef.data().incorrect + 1;
+              transaction.update(db.collection("scores").doc("groupScore"), { incorrect: newIncorrectScore });
+            });
+          }).then(function() {
+            console.log("Transaction successfully committed!");
+          }).catch(function(error) {
+            console.log("Transaction failed: ", error);
+          });
+        }
+
+        // Reset guess field so the user can submit a new guess.
+        document.getElementById('guess').value = "";
+      }
+    </script>
+
+  </body>
+</html> 

@@ -1,0 +1,65 @@
+<h1>Photo Guessing Game - Dashboard</h1>
+
+<br>
+
+<html>
+  <body>
+    <img src="https://storage.googleapis.com/treehacks-demo/sunset.png" width=500 height=325>
+    <div id="correctScore">
+      <h2><b>Correct: </b></h2>
+    </div>
+    <div id="incorrectScore">
+      <h2><b>Incorrect: </b></h2>
+    </div>
+    <h2><b>All Guesses: </b></h2>
+    <h3 id="guesses"></h3>
+    
+    <!-- Fetch the Firebase and Cloud Firestore Javascript libraries -->
+    <script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-firestore.js"></script>
+    <script>
+      // Firebase Configuration - REPLACE WITH YOUR OWN VALUES
+      var config = {
+        apiKey: REPLACE_WITH_YOUR_API_KEY,
+        authDomain: REPLACE_WITH_YOUR_AUTH_DOMAIN,
+        databaseURL: REPLACE_WITH_YOUR_DATABASE_URL,
+        projectId: REPLACE_WITH_YOUR_PROJECT_ID,
+        storageBucket: REPLACE_WITH_YOUR_STORAGE_BUCKET,
+        messagingSenderId: REPLACE_WITH_YOUR_MESSAGING_SENDER_ID,
+      };
+      
+      // Initialize Firebase and Cloud Firestore
+      firebase.initializeApp(config);
+      var db = firebase.firestore();
+
+      // Set up a realtime listener object to listen for changes to the Cloud Firestore database's 'guesses' collection. For each added document, add the guess to the list of guesses on the dashboard.
+      db.collection("guesses").onSnapshot(function(querySnapshot) {
+        querySnapshot.docChanges.forEach(function(change) {
+          if (change.type === "added") {
+            var guess = change.doc.data().guess;
+            var correct = change.doc.data().correct;
+            var guessHTMLString = ' <b><span style="color:red">' + guess + '</span></b>';
+            if (correct) {
+              guessHTMLString = ' <b><span style="color:green">' + guess + '</span></b>'
+            }
+            document.getElementById("guesses").innerHTML += guessHTMLString;
+          }
+        });
+      });
+
+      // Set up a realtime listener object to listen for changes to the Cloud Firestore database's 'scores' collection. For the modified document, fetch the latest correct / incorrect values and update them on the dashboard.
+      db.collection("scores").onSnapshot(function(querySnapshot) {
+        querySnapshot.docChanges.forEach(function(change) {
+          if (change.type === "modified") {
+            var newCorrectScore = change.doc.data().correct;
+            var newIncorrectScore = change.doc.data().incorrect;
+            var newCorrectScoreHTML = "<h2><b>Correct: " + newCorrectScore + "</b></h2>";
+            var newIncorrectScoreHTML = "<h2><b>Incorrect: " + newIncorrectScore + "</b></h2>";
+            document.getElementById("correctScore").innerHTML=newCorrectScoreHTML;
+            document.getElementById("incorrectScore").innerHTML=newIncorrectScoreHTML;
+          }
+        });
+      });
+    </script>
+  </body>
+</html> 
