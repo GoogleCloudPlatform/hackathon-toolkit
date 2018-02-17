@@ -5,6 +5,7 @@
 
 <html>
   <body>
+    <h2><a href="{{ url_for('dashboard') }}">Game Dashboard</a></h2>
     <img src="https://storage.googleapis.com/treehacks-demo/sunset.png" width=500 height=325>
     <br><br>
     Guess: <input type="text" name="guess" id="guess"><br><br>
@@ -16,12 +17,12 @@
     <script>
       // Firebase Configuration - REPLACE WITH YOUR OWN VALUES
       var config = {
-        apiKey: REPLACE_WITH_YOUR_API_KEY,
-        authDomain: REPLACE_WITH_YOUR_AUTH_DOMAIN,
-        databaseURL: REPLACE_WITH_YOUR_DATABASE_URL,
-        projectId: REPLACE_WITH_YOUR_PROJECT_ID,
-        storageBucket: REPLACE_WITH_YOUR_STORAGE_BUCKET,
-        messagingSenderId: REPLACE_WITH_YOUR_MESSAGING_SENDER_ID,
+        apiKey: "AIzaSyCm110rRSgkVMNS_EUHIwbK6LSIP6Gl3KM",
+        authDomain: "treehacks-demo-2.firebaseapp.com",
+        databaseURL: "https://treehacks-demo-2.firebaseio.com",
+        projectId: "treehacks-demo-2",
+        storageBucket: "treehacks-demo-2.appspot.com",
+        messagingSenderId: "82237681164"
       };
 
       // Initialize Firebase and Cloud Firestore
