@@ -4,7 +4,7 @@
 
 <html>
   <body>
-    <h2><a href="{{ url_for('play') }}">Play the Game</a></h2>
+    <h2><a href="{{ url_for('play') }}">Play the Game</a> <a onclick="resetGame()" href="#">Reset Game</a></h2>
     <img src="https://storage.googleapis.com/treehacks-demo/sunset.png" width=500 height=325>
     <div id="correctScore">
       <h2><b>Correct: </b></h2>
@@ -61,6 +61,34 @@
           }
         });
       });
+
+      // Function for an administrator to clear guesses / scores for the game.
+      function resetGame() {
+        // Clear all documents from the 'guesses' collection in the Cloud Firestore database.
+        db.collection("guesses").get().then(function(querySnapshot) {
+          querySnapshot.forEach(function(doc) {
+            db.collection("guesses").doc(doc.id).delete().then(function() {
+              console.log("Document successfully deleted!");
+            }).catch(function(error) {
+              console.error("Error removing document: ", error);
+            });
+          });
+        });
+
+        // Reset game scores in the Cloud Firestore database.
+        var scoresRef = db.collection("scores").doc("groupScore");
+        scoresRef.update({
+          correct: 0,
+          incorrect: 0
+        }).then(function() {
+          console.log("groupScore Document successfully updated!");
+        }).catch(function(error) {
+          console.error("Error updating groupScore document: ", error);
+        });
+        
+        // Clear the guesses HTML output on the Dashboard.
+        document.getElementById("guesses").innerHTML = '';
+      }
     </script>
   </body>
 </html> 
