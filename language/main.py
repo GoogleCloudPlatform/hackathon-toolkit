@@ -9,26 +9,29 @@ app = Flask(__name__)
 
 @app.route('/')
 def homepage():
-    # Return a Jinja2 HTML template and pass in image_entities as a parameter.
+    # Return a Jinja2 HTML template of the homepage.
     return render_template('homepage.html')
 
 @app.route('/run_language', methods=['GET', 'POST'])
 def run_language():
-    # Create a Cloud Natural Language client.
+    # Create a Cloud Natural Language client
     client = language.LanguageServiceClient()
 
-    # Retrieve inputs and create document object
+    # Retrieve inputted text from the form and create document object
     text = request.form['text']
-    document = language.types.Document(content=text, type=enums.Document.Type.PLAIN_TEXT)
+    document = types.Document(content=text, type=enums.Document.Type.PLAIN_TEXT)
 
-    # Retrieve response from Natural Language's analyze_entities() method
-    response = client.analyze_entities(document=document)
+    # Retrieve response from Natural Language API's analyze_entities() method
+    response = client.analyze_entities(document)
     entities = response.entities
 
-    # Retrieve response from Natural Language's analyze_sentiment() method
-    response = client.analyze_sentiment(document=document)
+    # Retrieve response from Natural Language API's analyze_sentiment() method
+    response = client.analyze_sentiment(document)
     sentiment = response.document_sentiment
 
+    # Return a Jinja2 HTML template of the homepage and pass the 'text', 'entities',
+    # and 'sentiment' variables to the frontend. These contain information retrieved
+    # from the Natural Language API.
     return render_template('homepage.html', text=text, entities=entities, sentiment=sentiment)
 
 @app.errorhandler(500)
