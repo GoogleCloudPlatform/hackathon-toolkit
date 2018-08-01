@@ -6,7 +6,7 @@ This sample demonstrates how to use the [Google Cloud Natural Language API](http
 
 Distribute GCP credits to workshop attendees and have them [activate them](https://console.cloud.google.com/education) for a Google account of their choice.
 
-Visit the [Google Cloud Console](https://www.console.cloud.google.com). In the top bar to the left of the search bar, you should see either an existing project ID or 'Select a project'. Click on this text and then click the 'NEW PROJECT' button in the top right corner of the popup box. Type in a new project name and click 'CREATE'.
+Visit the [Google Cloud Console](https://console.cloud.google.com). In the top bar to the left of the search bar, you should see either an existing project ID or 'Select a project'. Click on this text and then click the 'NEW PROJECT' button in the top right corner of the popup box. Type in a new project name and click 'CREATE'.
 
 Enable the Natural Language API. In the Google Cloud Console, click the button in the top left, click 'APIs & Services', click 'Enable APIs and Services' at the top, search for 'Natural Language API', click the first result, then click the 'ENABLE' button.
 
