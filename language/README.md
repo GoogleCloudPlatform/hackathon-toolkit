@@ -1,6 +1,6 @@
 # Python Google Cloud Natural Language sample for Google App Engine Flexible Environment
 
-This sample demonstrates how to use the [Google Cloud Natural Language API](https://cloud.google.com/natural-language/) on [Google App Engine Flexible Environment](https://cloud.google.com/appengine). This app allows users to input text, which is processed with the Google Cloud Natural Language API. The frontend of the application displays information retrieved from the Natural Language API including sentiment analysis, entity detection, and entity sentiment.
+This sample demonstrates how to use the [Google Cloud Natural Language API](https://cloud.google.com/natural-language/) on [Google App Engine Flexible Environment](https://cloud.google.com/appengine). This app allows users to input text, which is sent to the Google Cloud Natural Language API. The frontend of the application displays information retrieved from the Natural Language API including sentiment analysis, entity detection, and entity sentiment.
 
 ## Setup
 
