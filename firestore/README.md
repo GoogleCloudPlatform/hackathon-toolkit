@@ -22,7 +22,7 @@ Click the button for 'Start in test mode', then click 'Enable'.
 
 On the left navigation bar at the top, click 'Project Overview'.
 
-Click the 'Add Firebase to your web app' button.
+Under 'Get started by adding Firebase to your app', click the '</>' button. This will help you add Firebase to your web app.
 
 Copy everything from the 'var config = {' line down to the '};' line.
 
@@ -86,7 +86,7 @@ Once it finishes deploying, visit your app at YOUR_PROJECT_ID.appspot.com and YO
 
 [Documentation and Tutorials for Google Cloud Firestore](https://firebase.google.com/docs/firestore/)
 
-[App Engine Standard for Python Flask Tutorial](https://cloud.google.com/appengine/docs/standard/python/getting-started/python-standard-env)
+[App Engine Standard for Python Flask Quickstart](https://cloud.google.com/appengine/docs/standard/python3/quickstart)
 
 [App Engine Flexible for Node.js Tutorial](https://cloud.google.com/nodejs/getting-started/hello-world)
 
