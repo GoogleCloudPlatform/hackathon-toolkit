@@ -16,7 +16,7 @@ Change directory to the sample code location:
 
 Open the [Firebase Console](https://console.firebase.google.com/) and create a new project.
 
-On the left navigation bar, click 'Develop', then click 'Database', then click 'Try Firestore Beta'.
+On the left navigation bar, click 'Develop', then click 'Database', then click 'Create Database'.
 
 Click the button for 'Start in test mode', then click 'Enable'.
 
