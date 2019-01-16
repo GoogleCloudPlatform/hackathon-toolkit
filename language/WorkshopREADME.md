@@ -1,6 +1,6 @@
-# Google Cloud Natural Language API Python sample for App Engine Flexible Environment
+# Google Cloud Natural Language API Python sample for App Engine Standard Environment
 
-This sample demonstrates how to use the [Google Cloud Natural Language API](https://cloud.google.com/natural-language/) on [App Engine Flexible Environment](https://cloud.google.com/appengine). This app allows users to input text, which is sent to the Google Cloud Natural Language API. The frontend of the application displays information retrieved from the Natural Language API including sentiment analysis, entity detection, and entity sentiment.
+This sample demonstrates how to use the [Google Cloud Natural Language API](https://cloud.google.com/natural-language/) on the [App Engine Standard Environment](https://cloud.google.com/appengine). This app allows users to input text, which is sent to the Google Cloud Natural Language API. The frontend of the application displays information retrieved from the Natural Language API including sentiment analysis, entity detection, and entity sentiment.
 
 ## Setup using Google Cloud Console
 
@@ -28,13 +28,13 @@ Change directory to the sample code location:
 
 ## Authentication
 
-Set up a service account. Back in the Google Cloud Console, search 'Service Accounts' in the top search bar, click on 'Service accounts', and click the 'CREATE A SERVICE ACCOUNT' button at the top. Give your service account a name and set the 'Project role' to 'Project > Owner'. Check the 'Furnish a new private key' box and click 'Save'.
+Set up a service account. Search 'Service Accounts' in the top search bar, click on 'Service accounts', and click the 'Create Service Account' button at the top. Give your service account a name and click 'CREATE'. For service account permissions, click 'Select a role' and choose Project > Owner. Click 'CONTINUE', click 'CREATE KEY', and click 'CREATE' to download a JSON service account key to your computer. Click 'DONE' to finish creating your service account.
 
 This will download a JSON file to your computer. Open this file and copy its contents.
 
 Next, direct your attention to the top bar of your Cloud Shell window. Look for an icon that looks like a pen on the right side (if you hover over it it should say 'Launch code editor BETA'). Click this button to launch Cloud Shell's code editor.
 
-On the left bar, open the drop down menu for 'gcp-hackathon-demos'. Right click on the 'language' folder and select New > File. Give it the name 'service-account.json'. Paste in the JSON file you copied to your clipboard. The Code Editor will automatically save this file.
+On the left bar, open the drop down menu for 'gcp-hackathon-demos'. Right click on the 'language' folder and select 'New File'. Give it the name 'service-account.json'. Paste in the JSON file you copied to your clipboard. The Code Editor will automatically save this file.
 
 Back in Cloud Shell, set the `GOOGLE_APPLICATION_CREDENTIALS` environment variable to point to the service account key location:
 
@@ -68,9 +68,9 @@ When you are ready to leave your virtual environment:
 
     deactivate
 
-## Deploying to App Engine [Optional]
+## Deploying to App Engine
 
-Deploy your application to App Engine (takes several minutes). When prompted to choose a region, choose the one that is closest to you geographically.
+Deploy your application to App Engine (should take <1 minute). When prompted to choose a region, choose the one that is closest to you geographically.
 
     gcloud app deploy
 
@@ -78,4 +78,10 @@ Deploy your application to App Engine (takes several minutes). When prompted to 
 
 [Google Cloud Natural Language API](https://cloud.google.com/natural-language/docs/)
 
+[App Engine Standard Python 3.7 Quickstart Tutorial](https://cloud.google.com/appengine/docs/standard/python3/quickstart)
+
 [Documentation for Google Cloud Client Libraries for Python](https://googlecloudplatform.github.io/google-cloud-python/latest/index.html)
+
+[Flask Web Framework](http://flask.pocoo.org/docs/1.0/)
+
+[Generating Templates in Flask with Jinja2](http://flask.pocoo.org/docs/1.0/quickstart/#rendering-templates)

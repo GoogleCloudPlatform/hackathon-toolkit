@@ -1,6 +1,6 @@
-# Python Google Cloud Natural Language sample for Google App Engine Flexible Environment
+# Google Cloud Natural Language API Python sample for App Engine Standard Environment
 
-This sample demonstrates how to use the [Google Cloud Natural Language API](https://cloud.google.com/natural-language/) on [Google App Engine Flexible Environment](https://cloud.google.com/appengine). This app allows users to input text, which is sent to the Google Cloud Natural Language API. The frontend of the application displays information retrieved from the Natural Language API including sentiment analysis, entity detection, and entity sentiment.
+This sample demonstrates how to use the [Google Cloud Natural Language API](https://cloud.google.com/natural-language/) on the [App Engine Standard Environment](https://cloud.google.com/appengine). This app allows users to input text, which is sent to the Google Cloud Natural Language API. The frontend of the application displays information retrieved from the Natural Language API including sentiment analysis, entity detection, and entity sentiment.
 
 ## Setup
 
@@ -26,11 +26,7 @@ Change directory to the sample code location:
 
 ## Authentication
 
-Set up application default credentials:
-
-    gcloud auth application-default login
-
-Set up a service account. Visit the [Google Cloud Platform console](https://console.cloud.google.com), search 'Service Accounts' on the top search bar, click on 'Service accounts', and click the 'Create a Service Account button' towards the top. Give your service account a name and set the 'Role' to Project > Owner. Check the 'Furnish a new private key' box and click 'Create'. Save the generated service account key json file to somewhere on your computer.
+Set up a service account. Visit the [Google Cloud Platform console](https://console.cloud.google.com), search 'Service Accounts' on the top search bar, click on 'Service accounts', and click the 'Create Service Account' button at the top. Give your service account a name and click 'CREATE'. For service account permissions, click 'Select a role' and choose Project > Owner. Click 'CONTINUE', click 'CREATE KEY', and click 'CREATE' to download a JSON service account key to your computer. Click 'DONE' to finish creating your service account. Save the generated service account key JSON file to somewhere on your computer and rename it to key.json.
 
 Set the `GOOGLE_APPLICATION_CREDENTIALS` variable to point to the service account key location:
 
@@ -64,10 +60,18 @@ When you are ready to leave your virtual environment:
 
 ## Deploying to App Engine
 
-Deploy your application to App Engine (takes several minutes). When prompted to choose a region, choose the one that is closest to you geographically.
+Deploy your application to App Engine (should take <1 minute). When prompted to choose a region, choose the one that is closest to you geographically.
 
     gcloud app deploy
 
 ## Further Reference
 
+[Google Cloud Natural Language API](https://cloud.google.com/natural-language/docs/)
+
+[App Engine Standard Python 3.7 Quickstart Tutorial](https://cloud.google.com/appengine/docs/standard/python3/quickstart)
+
 [Documentation for Google Cloud Client Libraries for Python](https://googlecloudplatform.github.io/google-cloud-python/latest/index.html)
+
+[Flask Web Framework](http://flask.pocoo.org/docs/1.0/)
+
+[Generating Templates in Flask with Jinja2](http://flask.pocoo.org/docs/1.0/quickstart/#rendering-templates)
