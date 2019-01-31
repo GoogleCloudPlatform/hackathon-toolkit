@@ -72,7 +72,7 @@ When you are ready to leave your virtual environment:
 
 ## Deploying to App Engine
 
-Before deploying, open the `app.yaml` file and replace `YOUR_CLOUD_STORAGE_BUCKET` with the name of your cloud storage bucket. This allows your code to access the appropriate environment variable when it is deployed.
+Before deploying, open the `app.yaml` file and replace `YOUR_CLOUD_STORAGE_BUCKET` with the name of your Cloud Storage bucket. This allows your code to access the appropriate environment variable when it is deployed.
 
 Deploy your application to App Engine (should take <1 minute). When prompted to choose a region, choose the one that is closest to you geographically.
 
