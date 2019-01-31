@@ -1,6 +1,6 @@
-# Python Google Cloud Vision sample for Google App Engine Flexible Environment
+# Google Cloud Vision API Python sample for App Engine Standard Environment
 
-This sample demonstrates how to use the [Google Cloud Vision API](https://cloud.google.com/vision/), [Google Cloud Storage](https://cloud.google.com/storage/), and [Google Cloud Datastore](https://cloud.google.com/datastore/) on [Google App Engine Flexible Environment](https://cloud.google.com/appengine).
+This sample demonstrates how to use the [Google Cloud Vision API](https://cloud.google.com/vision/), [Google Cloud Storage](https://cloud.google.com/storage/), and [Google Cloud Firestore](https://cloud.google.com/firestore/) on the [App Engine Standard Environment](https://cloud.google.com/appengine/docs/standard/python3/). The frontend of the application displays information retrieved from the Vision API including label detection, face detection, and web entity detection.
 
 ## Setup
 
@@ -8,7 +8,7 @@ Create a project with the [Google Cloud Platform Console Cloud Resource Manager]
 
 Enable the Vision API. Go to the [Google Cloud Platform console](https://console.cloud.google.com), click the button in the top left, select 'APIs & services', click 'Enable APIs and Services' at the top, search for 'Vision', click the first result, then click the 'Enable' button.
 
-Enable the Datastore API the same way. (If it says 'Manage' when you visit its page, it's already enabled)
+Enable the Cloud Firestore API the same way. (If it says 'Manage' when you visit its page, it's already enabled)
 
 Enable the Google Cloud Storage JSON API as well. (If it says 'Manage' when you visit its page, it's already enabled)
 
@@ -18,15 +18,13 @@ Set the `CLOUD_STORAGE_BUCKET` environment variable to your Cloud Storage bucket
 
     export CLOUD_STORAGE_BUCKET=INSERT_NAME_OF_YOUR_BUCKET
 
+Set up your Cloud Firestore database. Go to the [Google Cloud Platform console](https://console.cloud.google.com), click the button in the top left, and scroll down and select 'Firestore'. In the 'Select a database service' screen, choose 'Cloud Firestore in Native mode'. Select a Cloud Firestore location that is close to you geographically and click 'Create Database'.
+
 Download the [Google Cloud SDK command line tool](https://cloud.google.com/sdk/downloads#interactive), also known as `gcloud`.
 
 Initialize gcloud, selecting your Google account and project ID:
 
     gcloud init
-
-Create an App Engine project:
-
-    gcloud app create
 
 ## Getting the sample code
 
@@ -40,11 +38,7 @@ Change directory to the sample code location:
 
 ## Authentication
 
-Set up application default credentials:
-
-    gcloud auth application-default login
-
-Set up a service account. Visit the [Google Cloud Platform console](https://console.cloud.google.com), search 'Service Accounts' on the top search bar, click on 'Service accounts', and click the 'Create a Service Account button' towards the top. Give your service account a name and set the 'Role' to Project > Owner. Check the 'Furnish a new private key' box and click 'Create'. Save the generated service account key json file to somewhere on your computer.
+Set up a service account. Visit the [Google Cloud Platform console](https://console.cloud.google.com), search 'Service Accounts' on the top search bar, click on 'Service accounts', and click the 'Create Service Account' button at the top. Give your service account a name and click 'CREATE'. For service account permissions, click 'Select a role' and choose Project > Owner. Click 'CONTINUE', click 'CREATE KEY', and click 'CREATE' to download a JSON service account key to your computer. Click 'DONE' to finish creating your service account. Save the generated service account key JSON file to somewhere on your computer and rename it to key.json.
 
 Set the `GOOGLE_APPLICATION_CREDENTIALS` variable to point to the service account key location:
 
@@ -78,12 +72,24 @@ When you are ready to leave your virtual environment:
 
 ## Deploying to App Engine
 
-Before deploying, open the `app.yaml` file and replace `YOUR_CLOUD_STORAGE_BUCKET` with the name of your cloud storage bucket. This allows your code to access the appropriate environment variable when it is deployed.
+Before deploying, open the `app.yaml` file and replace `YOUR_CLOUD_STORAGE_BUCKET` with the name of your Cloud Storage bucket. This allows your code to access the appropriate environment variable when it is deployed.
 
-Deploy your application to App Engine (takes several minutes). When prompted to choose a region, choose the one that is closest to you geographically.
+Deploy your application to App Engine (should take <1 minute). When prompted to choose a region, choose the one that is closest to you geographically.
 
     gcloud app deploy
 
 ## Further Reference
 
+[Google Cloud Vision API](https://cloud.google.com/vision/docs/)
+
+[Google Cloud Firestore](https://cloud.google.com/firestore/docs/)
+
+[Google Cloud Storage](https://cloud.google.com/storage/docs/)
+
+[App Engine Standard Python 3.7 Quickstart Tutorial](https://cloud.google.com/appengine/docs/standard/python3/quickstart)
+
 [Documentation for Google Cloud Client Libraries for Python](https://googlecloudplatform.github.io/google-cloud-python/latest/index.html)
+
+[Flask Web Framework](http://flask.pocoo.org/docs/1.0/)
+
+[Generating Templates in Flask with Jinja2](http://flask.pocoo.org/docs/1.0/quickstart/#rendering-templates)
