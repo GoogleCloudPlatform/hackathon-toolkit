@@ -66,7 +66,7 @@ Deploy your application to App Engine (should take <1 minute). When prompted to 
 
 ## Further Reference
 
-[Google Translate API](https://cloud.google.com/translate/docs/)
+[Google Cloud Translate API](https://cloud.google.com/translate/docs/)
 
 [App Engine Standard Python 3.7 Quickstart Tutorial](https://cloud.google.com/appengine/docs/standard/python3/quickstart)
 
