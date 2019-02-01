@@ -16,15 +16,15 @@ def homepage():
     # Return a Jinja2 HTML template and pass in image_entities as a parameter.
     return render_template('homepage.html')
 
-# Transcribes the audio file specified by the gcs_uri.
+# Transcribes the audio file specified by the source_uri.
 # Adapted from: https://github.com/GoogleCloudPlatform/python-docs-samples/blob/master/speech/cloud-client/transcribe.py
-def transcribe_audio(gcs_uri):
+def transcribe_audio(source_uri):
 
     # Create a Speech Client object to interact with the Speech Client Library.
     client = speech.SpeechClient()
 
     # Create audio and config objects that you'll need to call the API.
-    audio = types.RecognitionAudio(uri=gcs_uri)
+    audio = types.RecognitionAudio(uri=source_uri)
     config = types.RecognitionConfig(
         encoding=enums.RecognitionConfig.AudioEncoding.LINEAR16,
         sample_rate_hertz=16000,

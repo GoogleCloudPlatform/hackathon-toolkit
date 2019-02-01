@@ -1,4 +1,4 @@
-Flask==0.12.2
-google-cloud-speech==0.30.0
-google-cloud-storage==1.6.0
-gunicorn==19.7.1
+Flask==1.0.2
+google-cloud-speech==0.36.3
+google-cloud-storage==1.13.2
+gunicorn==19.9.0
