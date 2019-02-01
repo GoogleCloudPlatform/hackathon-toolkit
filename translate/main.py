@@ -22,7 +22,7 @@ def run_translate():
     input_text = detect_language_response.get('input')
     language = detect_language_response.get('language')
 
-    # Retrieve Translate API's translate to french response for the input text
+    # Retrieve Translate API's translate to French response for the input text
     # See https://cloud.google.com/translate/docs/languages for supported target_language values.
     translate_response_french = client.translate(form_text, target_language='fr')
     translated_text_french = translate_response_french.get('translatedText')
