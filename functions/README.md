@@ -44,7 +44,7 @@ Go to the [Google Cloud Platform Console](https://console.cloud.google.com), cli
 
 After the image uploads, click the navigation menu in the top left of your [Google Cloud Platform Console](https://console.cloud.google.com) and select 'Firestore'. Make sure you have a 'photos' collection and a document within it named the same as your uploaded image. Within that document, make sure that there is a 'labelsDetected' field with an array of labels detected using the Vision API.
 
-If you have any issues, visit the dashboard for your Cloud Function in the Cloud Functions section of the [Google Cloud Platform Console]((https://console.cloud.google.com). See if there are any errors in the 'Errors in the last 7 days' section at the bottom. You can also click the 'View Logs' button at the top of your Cloud Function's dashboard.
+If you have any issues, visit the dashboard for your Cloud Function in the Cloud Functions section of the [Google Cloud Platform Console](https://console.cloud.google.com). See if there are any errors in the 'Errors in the last 7 days' section at the bottom. You can also click the 'View Logs' button at the top of your Cloud Function's dashboard.
 
 ## Further Reference
 
