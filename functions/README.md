@@ -1,6 +1,6 @@
-# Google Cloud Functions, Cloud Storage, and Cloud Firestore Python sample
+# Google Cloud Functions, Cloud Storage, Vision API, and Cloud Firestore Python sample
 
-This sample demonstrates how to use [Google Cloud Functions](https://cloud.google.com/functions/) with a [Google Cloud Storage](https://cloud.google.com/storage/) trigger to store data in the [Google Cloud Firestore](https://cloud.google.com/firestore/) database.
+This sample demonstrates how to use [Google Cloud Functions](https://cloud.google.com/functions/) with a [Google Cloud Storage](https://cloud.google.com/storage/) trigger to call the [Google Cloud Vision API](https://cloud.google.com/vision/) and store data in the [Google Cloud Firestore](https://cloud.google.com/firestore/) database.
 
 ## Setup
 
@@ -26,7 +26,7 @@ Go to the [Google Cloud Platform Console](https://console.cloud.google.com), cli
 
 Give your new Cloud Function an appropriate name (such as process_image). Change the Trigger from HTTP to Cloud Storage.
 
-For the 'Bucket' field, click 'Browse' and then click basket icon (New bucket) to create a new Cloud Storage bucket. Name it the same as your Google Cloud project. Leave all fields the same and click 'Create' to create a Cloud Storage bucket. Click 'Select' to select this bucket as the trigger for your Cloud Function.
+For the 'Bucket' field, click 'Browse' and then click the basket icon (New bucket) to create a new Cloud Storage bucket. Name it the same as your Google Cloud project. Leave all fields the same and click 'Create' to create a Cloud Storage bucket. Click 'Select' to select this bucket as the trigger for your Cloud Function.
 
 Change the Runtime from Node.js 6 to Python 3.7 (Beta).
 
@@ -51,6 +51,8 @@ If you have any issues, visit the dashboard for your Cloud Function in the Cloud
 [Google Cloud Functions](https://cloud.google.com/functions/docs/)
 
 [Google Cloud Functions - Background Functions](https://cloud.google.com/functions/docs/writing/background)
+
+[Google Cloud Storage](https://cloud.google.com/storage/docs/)
 
 [Google Cloud Vision API](https://cloud.google.com/vision/docs/)
 
