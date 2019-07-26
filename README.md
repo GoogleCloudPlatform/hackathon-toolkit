@@ -4,8 +4,6 @@ This repo contains code samples for using Google Cloud Platform.
 
 ## Products code samples
 
-![](https://www.gstatic.com/images/branding/product/2x/firebase_96dp.png)
-
 - [Firestore](firestore/README.md)
 - [Cloud Functions](functions/README.md)
 - [Cloud Natural Language](language/README.md)
