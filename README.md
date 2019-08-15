@@ -2,6 +2,9 @@
 
 This repo contains code samples for using Google Cloud Platform.
 
+<!-- https://cloud.google.com/blog/products/gcp/readers-choice-top-google-cloud-platform-stories-of-2018 -->
+![cloud](https://user-images.githubusercontent.com/744973/63130880-bbd43600-bf70-11e9-91e7-0e7167771b5e.gif)
+
 ## Products code samples
 
 - [Firestore](firestore/README.md)
