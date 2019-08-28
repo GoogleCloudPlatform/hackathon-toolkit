@@ -16,17 +16,18 @@
     <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-firestore.js"></script>
     <script>
       // Firebase Configuration - REPLACE WITH YOUR OWN VALUES
-      var config = {
-        apiKey: "REPLACE_WITH_YOUR_API_KEY",
-        authDomain: "REPLACE_WITH_YOUR_AUTH_DOMAIN",
-        databaseURL: "REPLACE_WITH_YOUR_DATABASE_URL",
-        projectId: "REPLACE_WITH_YOUR_PROJECT_ID",
-        storageBucket: "REPLACE_WITH_YOUR_STORAGE_BUCKET",
-        messagingSenderId: "REPLACE_WITH_YOUR_MESSAGING_SENDER_ID"
+      var firebaseConfig = {
+        apiKey: "AIzaSyBVyl83gglHHtbUQ5mjUmL5iJkHszjCYL8",
+        authDomain: "hackathon-toolkit-demo.firebaseapp.com",
+        databaseURL: "https://hackathon-toolkit-demo.firebaseio.com",
+        projectId: "hackathon-toolkit-demo",
+        storageBucket: "hackathon-toolkit-demo.appspot.com",
+        messagingSenderId: "676843182730",
+        appId: "1:676843182730:web:d35386932dea7916b9eb73"
       };
 
       // Initialize Firebase and Cloud Firestore
-      firebase.initializeApp(config);
+      firebase.initializeApp(firebaseConfig);
       var db = firebase.firestore();
 
       // Retrieve correct answers from Cloud Firestore database's 'sunsetPhoto' document in the 'answers' collection. Store them in a variable called answersArray.
