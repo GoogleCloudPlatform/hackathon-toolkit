@@ -1,0 +1,16 @@
+# Google API Secrets
+client_secret.json
+application_credentials.json
+storage.json
+credentials.json
+token.pickle
+
+# Environments
+.env
+.venv
+env/
+venv/
+
+# Other
+.DS_Store
+*.log
