@@ -12,7 +12,7 @@ Google Cloud is a suite of developer products that lets you build using the same
 If you are at a Major League Hacking (MLH) hackathon, check for an email from MLH that has free credits.
 
 ### What products should I try?
-Each of these products is linked to our Quickstart tutorials, which are fast 5-10 minute tutorials to get you up and running with your first API call or deployment. On the left navigation bar for each product documentation page, we have links to other
+Check out our Quickstart tutorials for each product - fast 5-10 minute tutorials to get you up and running with your first API call or deployment. On the left navigation bar for each product documentation page, we have links to other tutorials.
 
 Machine Learning APIs - gain insights from data using Google’s pre-trained machine learning models.
 - [Vision](https://cloud.google.com/vision/docs/quickstart-client-libraries)
@@ -21,9 +21,9 @@ Machine Learning APIs - gain insights from data using Google’s pre-trained mac
 - [Video Intelligence](https://cloud.google.com/video-intelligence/docs/quickstart-client-libraries)
 - [Speech-To-Text](https://cloud.google.com/speech-to-text/docs/quickstart-client-libraries)
 - [Text-To-Speech](https://cloud.google.com/text-to-speech/docs/quickstart-client-libraries)
-[Firebase](https://firebase.google.com) - mobile / web development platform featuring the Firebase realtime database
-[App Engine](https://cloud.google.com/appengine/docs) - deploy web apps in Python, Node.js, Ruby, and more!
-[Cloud Firestore](https://cloud.google.com/firestore/docs/quickstart-servers) - easy-to-use realtime NoSQL database
+- [Firebase](https://firebase.google.com) - mobile / web development platform featuring the Firebase realtime database
+- [App Engine](https://cloud.google.com/appengine/docs) - deploy web apps in Python, Node.js, Ruby, and more!
+- [Cloud Firestore](https://cloud.google.com/firestore/docs/quickstart-servers) - easy-to-use realtime NoSQL database
 
 ### Product Code Samples
 
