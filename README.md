@@ -16,13 +16,13 @@ Each of these products is linked to our Quickstart tutorials, which are fast 5-1
 
 Machine Learning APIs - gain insights from data using Google’s pre-trained machine learning models.
 - [Vision](https://cloud.google.com/vision/docs/quickstart-client-libraries)
-- [Natural Language](cloud.google.com/natural-language/docs/quickstart-client-libraries)
-- [Translate](cloud.google.com/translate/docs/quickstart-client-libraries)
-- [Video Intelligence](cloud.google.com/video-intelligence/docs/quickstart-client-libraries)
-- [Speech-To-Text](cloud.google.com/speech-to-text/docs/quickstart-client-libraries)
-- [Text-To-Speech](cloud.google.com/text-to-speech/docs/quickstart-client-libraries)
-[Firebase](firebase.google.com) - mobile / web development platform featuring the Firebase realtime database
-[App Engine](cloud.google.com/appengine/docs) - deploy web apps in Python, Node.js, Ruby, and more!
+- [Natural Language](https://cloud.google.com/natural-language/docs/quickstart-client-libraries)
+- [Translate](https://cloud.google.com/translate/docs/quickstart-client-libraries)
+- [Video Intelligence](https://cloud.google.com/video-intelligence/docs/quickstart-client-libraries)
+- [Speech-To-Text](https://cloud.google.com/speech-to-text/docs/quickstart-client-libraries)
+- [Text-To-Speech](https://cloud.google.com/text-to-speech/docs/quickstart-client-libraries)
+[Firebase](https://firebase.google.com) - mobile / web development platform featuring the Firebase realtime database
+[App Engine](https://cloud.google.com/appengine/docs) - deploy web apps in Python, Node.js, Ruby, and more!
 [Cloud Firestore](https://cloud.google.com/firestore/docs/quickstart-servers) - easy-to-use realtime NoSQL database
 
 ### Product Code Samples
