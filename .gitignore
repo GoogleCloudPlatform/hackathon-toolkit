@@ -13,5 +13,4 @@ venv/
 
 # Other
 .DS_Store
-env/
 *.log
