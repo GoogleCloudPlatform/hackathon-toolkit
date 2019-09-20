@@ -1,24 +1,51 @@
-# Google Cloud Vision API Python sample for App Engine Standard Environment
+# Google Cloud Vision API Sample
 
-This sample demonstrates how to use the [Google Cloud Vision API](https://cloud.google.com/vision/), [Google Cloud Storage](https://cloud.google.com/storage/), and [Google Cloud Firestore](https://cloud.google.com/firestore/) on the [App Engine Standard Environment](https://cloud.google.com/appengine/docs/standard/python3/). The frontend of the application displays information retrieved from the Vision API including label detection, face detection, and web entity detection.
+This sample demonstrates how to use the following APIs:
+
+- [Google Cloud Vision API](https://cloud.google.com/vision/)
+- [Google Cloud Storage](https://cloud.google.com/storage/)
+- [Google Cloud Firestore](https://cloud.google.com/firestore/)
+
+This sample application will be deployed on the [App Engine Standard Environment](https://cloud.google.com/appengine/docs/standard/python3/). The frontend of the application displays information retrieved from the `Vision API` including `label detection`, `face detection`, and `web entity detection`.
 
 ## Setup
 
-Create a project with the [Google Cloud Platform Console Cloud Resource Manager](https://console.cloud.google.com/cloud-resource-manager). Make note of your project ID, which may be different than your project name. Make sure to [Enable Billing](https://console.cloud.google.com/billing?debugUI=DEVELOPERS) for your project.
+### Create a Project
 
-Enable the Vision API. Go to the [Google Cloud Platform console](https://console.cloud.google.com), click the button in the top left, select 'APIs & services', click 'Enable APIs and Services' at the top, search for 'Vision', click the first result, then click the 'Enable' button.
+1. Create a project with the [Google Cloud Platform Console Cloud Resource Manager](https://console.cloud.google.com/cloud-resource-manager).
+    1. Make note of your project ID, which may be different than your project name.
+    1. Make sure to [Enable Billing](https://console.cloud.google.com/billing?debugUI=DEVELOPERS) for your project.
 
-Enable the Cloud Firestore API the same way. (If it says 'Manage' when you visit its page, it's already enabled)
+### Enable the APIs
 
-Enable the Google Cloud Storage JSON API as well. (If it says 'Manage' when you visit its page, it's already enabled)
+1. Go to the [Google Cloud Platform console](https://console.cloud.google.com).
+1. Click the button in the top left, select `APIs & Services`.
+1. Click 'Enable APIs and Services' at the top, search for `Vision`.
+1. Click the first result, then click the `Enable` button.
+1. Enable the Cloud Firestore API the same way. (If it says 'Manage' when you visit its page, it's already enabled)
+1. Enable the Google Cloud Storage JSON API as well. (If it says 'Manage' when you visit its page, it's already enabled)
 
-Create a Cloud Storage bucket. Go to the [Google Cloud Platform console](https://console.cloud.google.com), click the button in the top left, scroll down and select 'Storage', click 'Create Bucket' at the top, and name your bucket the same as your project ID.
+### Create a Cloud Storage Bucket
+
+Create a Cloud Storage bucket.
+
+1. Go to the [Google Cloud Platform console](https://console.cloud.google.com).
+1. Click the button in the top left, scroll down and select `Storage`.
+1. Click `Create Bucket` at the top.
+1. Name your bucket the same as your project ID.
 
 Set the `CLOUD_STORAGE_BUCKET` environment variable to your Cloud Storage bucket using command line:
 
     export CLOUD_STORAGE_BUCKET=INSERT_NAME_OF_YOUR_BUCKET
 
-Set up your Cloud Firestore database. Go to the [Google Cloud Platform console](https://console.cloud.google.com), click the button in the top left, and scroll down and select 'Firestore'. In the 'Select a database service' screen, choose 'Cloud Firestore in Native mode'. Select a Cloud Firestore location that is close to you geographically and click 'Create Database'.
+### Set up Cloud Firestore
+
+Set up your Cloud Firestore database.
+
+1. Go to the [Google Cloud Platform console](https://console.cloud.google.com).
+1. Click the button in the top left, and scroll down and select `Firestore`.
+1. In the 'Select a database service' screen, choose `Cloud Firestore in Native mode`.
+1. Select a Cloud Firestore location that is close to you geographically and click `Create Database`.
 
 Download the [Google Cloud SDK command line tool](https://cloud.google.com/sdk/downloads#interactive), also known as `gcloud`.
 
@@ -30,15 +57,25 @@ Initialize gcloud, selecting your Google account and project ID:
 
 Run the following command to clone the Github repository:
 
-    git clone https://github.com/ryanmats/gcp-hackathon-demos.git
+    git clone https://github.com/GoogleCloudPlatform/hackathon-toolkit.git
 
 Change directory to the sample code location:
 
-    cd gcp-hackathon-demos/vision
+    cd hackathon-toolkit/vision
 
 ## Authentication
 
-Set up a service account. Visit the [Google Cloud Platform console](https://console.cloud.google.com), search 'Service Accounts' on the top search bar, click on 'Service accounts', and click the 'Create Service Account' button at the top. Give your service account a name and click 'CREATE'. For service account permissions, click 'Select a role' and choose Project > Owner. Click 'CONTINUE', click 'CREATE KEY', and click 'CREATE' to download a JSON service account key to your computer. Click 'DONE' to finish creating your service account. Save the generated service account key JSON file to somewhere on your computer and rename it to key.json.
+Set up a service account.
+
+1. Visit the [Google Cloud Platform console](https://console.cloud.google.com).
+1. Search `Service Accounts` on the top search bar.
+1. Click on `Service accounts`, and click the `Create Service Account` button at the top.
+1. Give your service account a name and click `CREATE`.
+    1. For service account permissions, click `Select a role` and choose `Project > Owner`.
+    1. Click `CONTINUE`.
+    1. Click `CREATE KEY`, and click `CREATE` to download a JSON service account key to your computer.
+    1. Click `DONE` to finish creating your service account.
+1. Save the generated service account key JSON file to somewhere on your computer and rename it to `key.json`.
 
 Set the `GOOGLE_APPLICATION_CREDENTIALS` variable to point to the service account key location:
 
@@ -80,16 +117,10 @@ Deploy your application to App Engine (should take <1 minute). When prompted to 
 
 ## Further Reference
 
-[Google Cloud Vision API](https://cloud.google.com/vision/docs/)
-
-[Google Cloud Firestore](https://cloud.google.com/firestore/docs/)
-
-[Google Cloud Storage](https://cloud.google.com/storage/docs/)
-
-[App Engine Standard Python 3.7 Quickstart Tutorial](https://cloud.google.com/appengine/docs/standard/python3/quickstart)
-
-[Documentation for Google Cloud Client Libraries for Python](https://googlecloudplatform.github.io/google-cloud-python/latest/index.html)
-
-[Flask Web Framework](http://flask.pocoo.org/docs/1.0/)
-
-[Generating Templates in Flask with Jinja2](http://flask.pocoo.org/docs/1.0/quickstart/#rendering-templates)
+- [Google Cloud Vision API](https://cloud.google.com/vision/docs/)
+- [Google Cloud Firestore](https://cloud.google.com/firestore/docs/)
+- [Google Cloud Storage](https://cloud.google.com/storage/docs/)
+- [App Engine Standard Python 3.7 Quickstart Tutorial](https://cloud.google.com/appengine/docs/standard/python3/quickstart)
+- [Documentation for Google Cloud Client Libraries for Python](https://googlecloudplatform.github.io/google-cloud-python/latest/index.html)
+- [Flask Web Framework](http://flask.pocoo.org/docs/1.0/)
+- [Generating Templates in Flask with Jinja2](http://flask.pocoo.org/docs/1.0/quickstart/#rendering-templates)
