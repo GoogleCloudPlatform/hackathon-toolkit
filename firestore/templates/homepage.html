@@ -22,11 +22,12 @@
         databaseURL: "REPLACE_WITH_YOUR_DATABASE_URL",
         projectId: "REPLACE_WITH_YOUR_PROJECT_ID",
         storageBucket: "REPLACE_WITH_YOUR_STORAGE_BUCKET",
-        messagingSenderId: "REPLACE_WITH_YOUR_MESSAGING_SENDER_ID"
+        messagingSenderId: "REPLACE_WITH_YOUR_MESSAGING_SENDER_ID",
+        appId: "REPLACE_WITH_YOUR_APP_ID"
       };
 
       // Initialize Firebase and Cloud Firestore
-      firebase.initializeApp(config);
+      firebase.initializeApp(firebaseConfig);
       var db = firebase.firestore();
 
       // Retrieve correct answers from Cloud Firestore database's 'sunsetPhoto' document in the 'answers' collection. Store them in a variable called answersArray.
