@@ -11,7 +11,7 @@ Google Cloud is a suite of developer products that lets you build using the same
 ### Where can I get Google Cloud credits? 
 If you are at a Major League Hacking (MLH) hackathon, check for an email from MLH that has credits provided to you at no cost. 
 
-If you are another student event, check out our [student programs for higher education](g.co/learncloud/programs) to apply for credits at no cost and without a credit card. 
+If you are another student event, check out our [student programs for higher education](https://g.co/learncloud/programs) to apply for credits at no cost and without a credit card. 
 
 ### What products should I try?
 Check out our Quickstart tutorials for each product - fast 5-10 minute tutorials to get you up and running with your first API call or deployment. On the left navigation bar for each product documentation page, we have links to other tutorials.
