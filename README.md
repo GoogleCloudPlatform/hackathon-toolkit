@@ -28,6 +28,20 @@ Check out our Quickstart tutorials for each product - fast 5-10 minute tutorials
 ##### [App Engine](https://cloud.google.com/appengine/docs) - deploy web apps in Python, Node.js, Ruby, and more!
 ##### [Cloud Firestore](https://cloud.google.com/firestore/docs/quickstart-servers) - easy-to-use realtime NoSQL database
 
+### Hackathon Tech Talk Slide Decks
+
+- [Three Powerful Google Cloud Products for Your Project](https://github.com/GoogleCloudPlatform/hackathon-toolkit/blob/master/tech-talks/Three%20Powerful%20Google%20Cloud%20Products%20for%20Your%20Project.pdf)
+- [Machine Learning on Google Cloud](https://github.com/GoogleCloudPlatform/hackathon-toolkit/blob/master/tech-talks/Machine%20Learning%20on%20Google%20Cloud.pdf)
+
+### Google Cloud YouTube Videos
+
+- [Intro to Google Cloud | For Student Developers](https://www.youtube.com/watch?v=5RGyepqiEGw)
+- [Choosing the right compute option in GCP: a decision tree](https://www.youtube.com/watch?v=2tLXKCgqwLY)
+- [Introducing Firebase](https://www.youtube.com/watch?v=O17OWyx08Cg&list=PLl-K7zZEsYLm7CPS0xf-7E7EF3AFxWRCW)
+- [Introducing Cloud Firestore](https://www.youtube.com/watch?v=QcsAb2RR52c)
+- [Intro to machine learning on Google Cloud Platform (Google I/O '18)](https://www.youtube.com/watch?v=gVz9jKE_9iU)
+- [Google Cloud Platform Essentials Playlist](https://www.youtube.com/playlist?list=PLIivdWyY5sqKh1gDR0WpP9iIOY00IE0xL)
+
 ### Product Code Samples
 
 - [Firestore](firestore/README.md)
