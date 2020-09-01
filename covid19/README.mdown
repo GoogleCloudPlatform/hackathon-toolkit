@@ -1,5 +1,8 @@
 # COVID-19 hackathon fund from Google Cloud
 
+<!-- https://cloud.google.com/blog/products/gcp/readers-choice-top-google-cloud-platform-stories-of-2018 -->
+![cloud](https://user-images.githubusercontent.com/744973/63130880-bbd43600-bf70-11e9-91e7-0e7167771b5e.gif)
+
 ### Program Overview
 Google Cloud is offering up to $5,000 in cloud credits and guidance from Google developers to select hackathon projects focused on building solutions for challenges related to COVID-19.
 
