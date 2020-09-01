@@ -1,0 +1,40 @@
+# COVID-19 hackathon fund from Google Cloud
+
+### Program Overview
+Google Cloud is offering up to $5,000 in cloud credits and guidance from Google developers to select hackathon projects focused on building solutions for challenges related to COVID-19.
+
+### How can I qualify for the program?
+Attend a Google Cloud sponsored hackathon in Fall 2020 and submit a project that uses Google Cloud to solve for a COVID-19 related problem. If your projected is selected, you will receive an exclusive invitation to apply for credits and mentorship to continue your project after the hackathon.
+
+### What types of projects are you looking for?
+Projects under the following areas are prioritized: Healthcare & Life Sciences, Economic Imapct, Social Engagement, and Education & Distance Learning. However, this is not an exhaustive list - other projects will be considered.
+
+### Who is eligible?
+Applicants must be from an affiliated higher education organization or institution residing in one of the following countries: Australia, Austria, Belgium, Bulgaria, Canada, Cyprus, Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Ireland, India, Indonesia, Israel, Italy, Latvia, Lithuania, Luxembourg, Malta, Netherlands, New Zealand, Norway, Poland, Portugal, Romania, Slovakia, Spain, Sweden, Switzerland, United Kingdom, United States.
+
+High school students are not eligible for the program.
+
+### What products should I try?
+Check out our Quickstart tutorials for each product - fast 5-10 minute tutorials to get you up and running with your first API call or deployment. On the left navigation bar for each product documentation page, we have links to other tutorials.
+
+##### COVID-19 Public Datasets Program - gain access to powerful COVID-19 related datasets (e.g. coronavirus case datasets, behavioral datasets, economic datasets, and demographic datasets).
+- [COVID-19 Public Datasets](https://cloud.google.com/blog/products/data-analytics/free-public-datasets-for-covid19)
+- [BigQuery - Quickstart using the Cloud Console](https://cloud.google.com/bigquery/docs/quickstarts/quickstart-web-ui)
+- [BigQuery - Quickstart using client libraries](https://cloud.google.com/bigquery/docs/quickstarts/quickstart-client-libraries)
+
+##### Machine Learning APIs - gain insights from data using Google’s pre-trained machine learning models.
+- [Vision](https://cloud.google.com/vision/docs/quickstart-client-libraries)
+- [Natural Language](https://cloud.google.com/natural-language/docs/quickstart-client-libraries)
+- [Translate](https://cloud.google.com/translate/docs/quickstart-client-libraries)
+- [Video Intelligence](https://cloud.google.com/video-intelligence/docs/quickstart-client-libraries)
+- [Speech-To-Text](https://cloud.google.com/speech-to-text/docs/quickstart-client-libraries)
+- [Text-To-Speech](https://cloud.google.com/text-to-speech/docs/quickstart-client-libraries)
+
+##### [Firebase](https://firebase.google.com) - mobile / web development platform featuring the Firebase realtime database
+##### [App Engine](https://cloud.google.com/appengine/docs) - deploy web apps in Python, Node.js, Ruby, and more!
+##### [Cloud Firestore](https://cloud.google.com/firestore/docs/quickstart-servers) - easy-to-use realtime NoSQL database
+
+### Hackathon Tech Talk Slide Decks
+
+- [Three Powerful Google Cloud Products for Your Project](https://github.com/GoogleCloudPlatform/hackathon-toolkit/blob/master/tech-talks/Three%20Powerful%20Google%20Cloud%20Products%20for%20Your%20Project.pdf)
+- [Machine Learning on Google Cloud](https://github.com/GoogleCloudPlatform/hackathon-toolkit/blob/master/tech-talks/Machine%20Learning%20on%20Google%20Cloud.pdf)
