@@ -1,5 +1,8 @@
 # COVID-19 hackathon fund from Google Cloud
 
+<!-- https://cloud.google.com/blog/products/gcp/readers-choice-top-google-cloud-platform-stories-of-2018 -->
+![cloud](https://user-images.githubusercontent.com/744973/63130880-bbd43600-bf70-11e9-91e7-0e7167771b5e.gif)
+
 ### Program Overview
 Google Cloud is offering up to $5,000 in cloud credits and guidance from Google developers to select hackathon projects focused on building solutions for challenges related to COVID-19.
 
@@ -13,6 +16,9 @@ Projects under the following areas are prioritized: Healthcare & Life Sciences, 
 Applicants must be from an affiliated higher education organization or institution residing in one of the following countries: Australia, Austria, Belgium, Bulgaria, Canada, Cyprus, Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Ireland, India, Indonesia, Israel, Italy, Latvia, Lithuania, Luxembourg, Malta, Netherlands, New Zealand, Norway, Poland, Portugal, Romania, Slovakia, Spain, Sweden, Switzerland, United Kingdom, United States.
 
 High school students are not eligible for the program.
+
+### Other Program Notes
+- COVID-19 hackathon fund credit grants can not be used on Google Maps Platform.
 
 ### What products should I try?
 Check out our Quickstart tutorials for each product - fast 5-10 minute tutorials to get you up and running with your first API call or deployment. On the left navigation bar for each product documentation page, we have links to other tutorials.
@@ -33,6 +39,10 @@ Check out our Quickstart tutorials for each product - fast 5-10 minute tutorials
 ##### [Firebase](https://firebase.google.com) - mobile / web development platform featuring the Firebase realtime database
 ##### [App Engine](https://cloud.google.com/appengine/docs) - deploy web apps in Python, Node.js, Ruby, and more!
 ##### [Cloud Firestore](https://cloud.google.com/firestore/docs/quickstart-servers) - easy-to-use realtime NoSQL database
+
+### Google AI Principles - Learn about Google's principles for using artificial intelligence in a socially responsible way.
+- [Google AI Principles](https://ai.google/principles/)
+- [Responsible AI Tech Talk @ Google Cloud NEXT 2019 UK'](https://www.youtube.com/watch?v=x1RTC5W2z78)
 
 ### Hackathon Tech Talk Slide Decks
 
