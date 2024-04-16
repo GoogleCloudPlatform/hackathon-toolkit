@@ -1,4 +1,4 @@
 Flask==1.0.2
 google-cloud-speech==0.36.3
 google-cloud-storage==1.13.2
-gunicorn==19.9.0
+gunicorn==22.0.0
